@@ -18,13 +18,14 @@ sum_massiv:
         jmp check
 
 sdvig_if_7:
+
         movl (%ebx), %ecx                    
         andl  $128, %ecx  
         cmpl  $128, %ecx /*проверка наличия 1 в 7 бите*/
         je    sum_massiv
         addl  $4, %ebx     /*выделили место и перешли на след.элемент*/                        
 check:
-        cmpl  $end, %ebx  /*последний ди элемент*/
+        cmpl  $end, %ebx  /*последний ли элемент*/
         jne    sdvig_if_7       
 
         pushl %eax
